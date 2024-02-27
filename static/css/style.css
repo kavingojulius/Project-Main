@@ -11,6 +11,14 @@
   font-style: normal;
 } */
 
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+}
+
+
 nav {
   background: linear-gradient(to right, rgba(28, 20, 20, 0.7), rgba(66, 97, 98, 0.7), rgba(64, 99, 99, 0.7), rgba(15, 43, 49, 0.7));
   height:13vh;
@@ -112,6 +120,11 @@ hr{
   font-family: 'Young Serif', serif; 
 }
 
+.copyright {
+  background: linear-gradient(to right, rgba(28, 20, 20, 0.7), rgba(66, 97, 98, 0.7), rgba(64, 99, 99, 0.7), rgba(15, 43, 49, 0.7));
+}
+
+
 
 @media (max-width:992px) {
   .section-ab h4 ,h5 {  
@@ -129,6 +142,11 @@ hr{
 @media (max-width:768px) {
   .smenu{
     background: linear-gradient(to right, rgb(26, 36, 38, 0.9), rgba(67, 90, 70, 0.9), rgb(65, 87, 70), rgba(15, 43, 49, 0.7));
+  }
+
+  .navbar-brand img{
+    width: 60px;
+    height:40px;
   }
 
   .section-ab h4 ,h5 {  
