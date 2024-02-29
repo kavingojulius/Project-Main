@@ -227,11 +227,7 @@
                         <span class="text-dark" style="width: 150px;">Images</span>
                     </a>
                 </li>
-                <li class="nav-item p-2">
-                    <a class="d-flex btn py-2 mx-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                        <span class="text-dark" style="width: 150px;">Latest Works</span>
-                    </a>
-                </li>
+                
                 <li class="nav-item p-2">
                     <a class="d-flex btn mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
                         <span class="text-dark" style="width: 150px;">Videos</span>
@@ -247,7 +243,7 @@
                               {% for work in work %}
                                 <div class="col-sm-6 col-md-4 col-lg-3 m-3 p-3 rounded-5" style="background-color: rgba(44, 78, 59, 0.5);">
                                     <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="{{work.image.url}}" alt="">
+                                        <img class="img-fluid rounded w-100" src="{{work.image.url}}" alt="Image not available" style="width: 80%; height: calc(0.5625 * 30vw); max-width:300px;min-width:100px;">
                                         <div class="event-overlay d-flex flex-column p-4">
                                             <h4 class="me-auto">{{work.name}}</h4>
                                             <!-- <a target="_blank" href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a> -->
@@ -255,75 +251,22 @@
                                     </div>
                                 </div>   
                                 
-                                {% endfor %}
-
-                                <!-- <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/images/bbg.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Web Development</h4>
-                                            <a target="_blank"  href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/images/bbg.jpg" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Social Media Managememt</h4>
-                                            <a target="_blank"  href="https://www.instagram.com/the_allure_lounge_official/?hl=en" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/images/backg.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Content Creation</h4>
-                                            <a target="_blank"  href="https://www.swahilimusicnotes.com/wimbo/kiu-ya-nafsi/36832" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                {% endfor %}                            
                                                                                                                                                                                                 
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="tab-2" class="tab-pane fade show p-0">
-                    <div class="row g-4">
-                        <div class="col-lg-12">
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/img/portfolio-web1.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Web Development</h4>
-                                            <a target="_blank" href="https://www.allurelounge.co.ke/" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/img/portfolio-web2.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Web Development</h4>
-                                            <a target="_blank"  href="https://gseriesmediakenya.com/" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>                
                 <div id="tab-3" class="tab-pane fade show p-0">
                     <div class="row g-4" style="background-image: url(static/images/bbg.png); background-position:center;  background-repeat: repeat;" >
                         <div class="col-lg-12">
                             <div class="row g-4 align-items-center justify-content-center">
                               {% for video_work in video_work %}
-                                <div class="col-sm-6 col-md-4 col-lg-3 border m-3 p-3 rounded-5" style="background-color: rgba(44, 78, 59, 0.5);">
+                              <!-- style="background-color: rgba(44, 78, 59, 0.5);" -->
+                                <div class="col-sm-6 col-md-4 col-lg-3 border m-3 p-3 rounded-5" style="background: linear-gradient(to right, rgb(26, 36, 38, 0.5), rgba(67, 90, 70, 0.3), rgb(65, 87, 70), rgba(15, 43, 49, 0.3));" >
                                     <div class="event-img position-relative">
-                                        <video src="{{video_work.video.url}}" controls style="max-width: 100%; height: auto;"></video>
-                                        <div class="event-overlay d-flex flex-column p-4">
+                                        <video src="{{video_work.video.url}}" controls style="width: 80%; height: calc(0.5625 * 40vw); max-width:300px;min-width:100px;"></video>
+                                        <div class="event-overlay d-flex flex-column p-4"> 
                                             <h4 class="me-auto">{{video_work.name}}</h4>
                                             <!-- <a target="_blank"  href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a> -->
                                         </div>
@@ -381,40 +324,17 @@
                     <div class="row g-4">
                         <div class="col-lg-12">
                             <div class="row gap-5 justify-content-center align-items-center">
-                                <div class="col-md-6 col-lg-4" style="">
-                                    <div class="event-img position-relative">
-                                        <!-- <img class="img-fluid rounded w-100" src="static/images/backg.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Web Development</h4>
-                                            <a target="_blank" href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div> -->
-                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2FEng.Mike%2Fposts%2Fpfbid028diuCEn23f2Npu82PeUJifTbKTURRudk1szUF3MH1mNAUbrqWNbsJdVs276CWJDsl&show_text=true&width=500" width="500" height="639" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                <div class="col-md-6 col-lg-4" >
+                                    <div class="event-img position-relative">                                        
+                                      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61556198125523%26_rdc%3D1%26_rdr&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4" style="">
+                                <div class="col-md-6 col-lg-4" >
                                     <div class="event-img position-relative">
-                                      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2FEng.Mike%2Fposts%2Fpfbid0F2vqP6P3Ae1LauFsTUL2uYuHJn2MPBLJZm1cjrGqAoayeqgP87HrG219cMtVEMUdl&show_text=true&width=500" width="500" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FEng.Mike%3F_rdc%3D1%26_rdr&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/images/bbg.jpg" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Social Media Managememt</h4>
-                                            <a target="_blank"  href="https://www.instagram.com/the_allure_lounge_official/?hl=en" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/images/backg.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Content Creation</h4>
-                                            <a target="_blank"  href="https://www.swahilimusicnotes.com/wimbo/kiu-ya-nafsi/36832" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                                                                                                                                                                                
+                                                                                                                                                                                    
                             </div>
                         </div>
                     </div>
@@ -423,24 +343,12 @@
                     <div class="row g-4">
                         <div class="col-lg-12">
                             <div class="row g-4">
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-lg-12">
                                     <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/img/portfolio-web1.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Web Development</h4>
-                                            <a target="_blank" href="https://www.allurelounge.co.ke/" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
+                                      <iframe src='https://widgets.sociablekit.com/tiktok-feed/iframe/25373807' frameborder='0' width='500px' height='500px'></iframe>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/img/portfolio-web2.png" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Web Development</h4>
-                                            <a target="_blank"  href="https://gseriesmediakenya.com/" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -449,24 +357,12 @@
                     <div class="row g-4">
                         <div class="col-lg-12">
                             <div class="row g-4">
-                                <div class="col-md-6 col-lg-3">
+                              <div class="col-lg-12">
                                     <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/img/portfolio-social.jpg" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Social Media Management</h4>
-                                            <a target="_blank"  href="https://www.instagram.com/the_allure_lounge_official/?hl=en" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
+                                      <iframe src='https://widgets.sociablekit.com/instagram-stories/iframe/25373826' frameborder='0' width='500px' height='500px'></iframe>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="static/img/portfolio-content.jpg" alt="">
-                                        <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">Content Creation</h4>
-                                            <a target="_blank"  href="https://www.swahilimusicnotes.com/wimbo/kiu-ya-nafsi/36832" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
