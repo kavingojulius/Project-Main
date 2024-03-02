@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-md fixed-top shadow container rounded-3 mt-3">
+    <div class="container align-items-center">
+      <a class="navbar-brand text-white" href="{% url 'home' %}">
+        <img src="static/images/logo.jpg" width="80px" height="60px" alt="" style="border-radius: 50%;">
+      </a>
+      <button class="navbar-toggler border-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- SideBar -->
+      <div class="smenu offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel"      
+      >
+        <!-- Sidebar Header Start-->
+        <div class="offcanvas-header text-white border-bottom">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="static/images/logo.png" width="80px" height="30px" alt=""></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <!-- Sidebar Header End-->
+
+        <div class="offcanvas-body  text-white">
+          <ul class="navbar-nav  align-items-center flex-grow-1 pe-3 fs-6 fw-bold">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{% url 'about_us' %}">About Us</a></li>                
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{% url 'home' %}#socialmedia">Social Media</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'home' %}#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'home' %}#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'home' %}#footer">Contact Us</a>
+            </li>
+          </ul>          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="main-header" style="background-image:url('static/images/bbg.jpg');">
+    
+        <div class="container">
+
+          <div class="row d-flex justify-content-center" style="font-family: 'Young Serif', serif; font-weight:bold;height:20vh;">              
+            <div class="col-xl-10 col-lg-10">
+              <div class="section-tittle text-center mb-90">
+                
+              </div>
+            </div>              
+          </div>
+          <!-- hero section -->
+          <div class="row d-flex start-content shadow-3 align-items-center">
+              <div class="col-xl-4 col-lg-4">
+                  <div class="section-ab text-center">
+                    <h3 style="color: rgb(38, 48, 44);">Mk Interior&decor </h3>                    
+                    
+                    <h5>We specialize in High end residential & commercial spaces. Bespoken solutions and unique designs</h5>
+                  </div>
+              </div>
+
+              <!-- <div class="col-xl-8 col-lg-8">
+                <div class="section-abt">
+                  <h3 style="color: rgb(216, 161, 83); text-align:center;">About Us</h3>
+                  <p>MK Interiors Ltd provides a design consultancy service from inception to completion. We manage residential projects involving interior renovations, kitchens, bathrooms and all aspects of joinery aiming to meet our client's aspirations and budget expectation. As a professional interior design company we can source materials, furniture, soft furnishings and accessories from a wide range of suppliers in the UK and around the world, whilst also drawing access to many specialists in the trade. We can lead the project or work alongside an architect and contractor to create a tailor-made interior that perfectly reflects the client's individuality and vision. Each project should be unique to the client's own personality, style and requirements but with the assistance of a designer's eye.</p>
+                </div>
+              </div> -->
+
+          </div>          
+
+      </div>                
+  </header>
