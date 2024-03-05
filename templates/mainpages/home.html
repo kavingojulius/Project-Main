@@ -18,17 +18,25 @@
           
           <div class="d-flex gap-5 flex-wrap justify-content-center align-items-center">
 
+            {% for service in service %}
+
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="card c-body">
-                <img src="media/images/bbg.jpg" class="card-img-top" alt="...">
+                <img src="{{service.image.url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Installations</h5>
-                  <p class="card-text">We have a team of skille and experienced professionals to install your ceilings to the perfection.</p>
+                  <h4 class="card-title text-center" style="color:#1c5e9c;">{{service.name}}</h4>
+                  <p class="card-text" style="font-style:oblique;">{{service.description}}</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            {% endfor %}
+
+            <!-- Installations -->
+            <!-- We have a team of skilled and experienced professionals to install your ceilings to the perfection. -->
+
+
+            <!-- <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="card">
                 <img src="media/images/bbg.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -97,7 +105,7 @@
                   <p class="card-text">Skilled professionals for precise installations.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
                         
           </div>
 
@@ -118,7 +126,7 @@
         </div>
         <div class="tab-class text-center">
 
-            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp">
                 <li class="nav-item p-2">
                     <a class="d-flex btn mx-2 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
                         <span class="text-dark px-2">Images</span>
@@ -140,11 +148,11 @@
 
                               {% for work in work %}
 
-                                <div class="col-sm-6 col-md-4 col-lg-3 m-3 p-3 rounded-5" style="background-color: rgba(44, 78, 59, 0.5);">
+                                <div class="col-sm-6 col-md-4 col-lg-3 m-3 p-3 rounded-5 work-container shadow-3">
                                     <div class="event-img position-relative">
-                                        <img class="img-fluid rounded w-100" src="{{work.image.url}}" alt="Image not available" style="width: 80%; height: calc(0.5625 * 30vw); max-width:300px;min-width:100px;">
+                                        <img class="img-fluid rounded w-100 work-image" src="{{work.image.url}}" alt="Image not available" >
                                         <div class="event-overlay d-flex flex-column p-4">
-                                            <h4 class="me-auto">{{work.name}}</h4>
+                                            <h4 class="text-center">{{work.name}}</h4>
                                             <!-- <a target="_blank" href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a> -->
                                         </div>
                                     </div>
@@ -165,11 +173,11 @@
                               {% for video_work in video_work %}
 
                               <!-- style="background-color: rgba(44, 78, 59, 0.5);" -->
-                                <div class="col-sm-6 col-md-4 col-lg-3 border m-3 p-3 rounded-5" style="background: linear-gradient(to right, rgb(26, 36, 38, 0.5), rgba(67, 90, 70, 0.3), rgb(65, 87, 70), rgba(15, 43, 49, 0.3));" >
+                                <div class="col-sm-6 col-md-4 col-lg-3 border m-3 p-3 rounded-5 video-work-container shadow-3">
                                     <div class="event-img position-relative">
-                                        <video src="{{video_work.video.url}}" controls style="width: 80%; height: calc(0.5625 * 40vw); max-width:300px;min-width:100px;"></video>
+                                        <video src="{{video_work.video.url}}" class="work-video" controls ></video>
                                         <div class="event-overlay d-flex flex-column p-4"> 
-                                            <h4 class="me-auto">{{video_work.name}}</h4>
+                                            <h4 class="text-center">{{video_work.name}}</h4>
                                             <!-- <a target="_blank"  href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a> -->
                                         </div>
                                     </div>
