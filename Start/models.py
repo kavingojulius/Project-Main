@@ -19,6 +19,10 @@ class VideosWork(models.Model):
     def __str__(self):
         return self.name
     
+    def delete(self, using=None, keep_parents=False):
+        self.name.delete()
+        super().delete()
+    
     class Meta:
         verbose_name_plural = 'Video work'
 
