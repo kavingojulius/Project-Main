@@ -1,7 +1,9 @@
+{% load static %}
+
 <nav class="navbar navbar-expand-md fixed-top shadow container rounded-3 mt-3">
     <div class="container align-items-center">
       <a class="navbar-brand text-white" href="{% url 'home' %}">
-        <img src="media/images/logo.jpg" width="80px" height="60px" alt="" style="border-radius: 50%;">
+        <img src="media/images/logo.jpg" width="70px" height="60px" alt="" style="border-radius: 50%;">
       </a>
       <button class="navbar-toggler border-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,7 +14,7 @@
       >
         <!-- Sidebar Header Start-->
         <div class="offcanvas-header text-white border-bottom">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="media/images/logo.png" width="80px" height="30px" alt=""></h5>
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="media/images/logo.png" width="70px" height="60px" alt=""></h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <!-- Sidebar Header End-->
@@ -49,7 +51,7 @@
     </div>
   </nav>
 
-  <header class="main-header" style="background-image:url('media/images/bbg.jpg');">
+  <header class="main-header" style="background-image:url('media/images/bbg.jpg');" data-aos="fade-up" data-aos-duration="2000">
     
         <div class="container">
 
@@ -61,15 +63,61 @@
             </div>              
           </div>
           <!-- hero section -->
-          <div class="row d-flex start-content shadow-3 align-items-center">
-              <div class="col-xl-4 col-lg-4">
-                  <div class="section-ab text-center">
-                    <h3 style="color: rgb(38, 48, 44);">Mk Interior&decor </h3>                    
-                    
-                    <h5>We specialize in High end residential & commercial spaces. Bespoken solutions and unique designs</h5>
+          <div class="row d-flex start-content shadow-3 align-items-center" style="background-color: rgba(31, 31, 31, 0.5); padding-top:5px;padding-bottom:5px;border-radius:5px;">
+              <div class="carousel slide" id="slide-demo" data-bs-wrap="true" data-bs-ride="carousel" >
+                <div class="carousel-inner">
+
+                  <div class="carousel-item active">
+                    <div class="row">                      
+                      <div class="col-xl-6 col-lg-6 col-md-6">
+                          <div class="section-b text-center">
+                              <img src="media/images/img3.jpg" alt="" class="img-fluid shadow-3 w-100 abbt" style="border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;">
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 align-content-center">
+                          <div class="section-bc" style="background-color: rgba(64, 98, 87, 0.6); padding:5px;border-radius:5px; padding:55px;">
+                              <h6 style="color: rgb(232, 255, 255); font-weight:bold; letter-spacing:2px;">We specialize in High end residential & commercial spaces. Bespoken solutions and unique designs.</h6>
+                          </div>
+                      </div>                      
+                    </div>
                   </div>
+
+
+                  {% for hero_images in hero_images %}
+
+                  <div class="carousel-item" style="padding-top:5px;padding-bottom:5px;border-radius:5px;">
+                    <div class="row">                      
+                      <div class="col-xl-6 col-lg-6 col-md-6">
+                          <div class="section-b text-center">
+                              <img src="{{hero_images.image.url}}" alt="" class="img-fluid shadow-3 w-100 abbt" style="border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;">
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 align-content-center">
+                          <div class="section-bc" style="padding:5px;border-radius:5px; padding:15px;" >
+                              <h6 style="color: rgb(244, 241, 241); font-weight:bold; letter-spacing:2px; ">{{hero_images.description}}</h6>
+                          </div>
+                      </div>                      
+                    </div>
+                  </div>
+
+                  {% endfor %}
+                  </div>
+                </div>
               </div>
-              
+
+              <button class="carousel-control-prev" type="button"
+                  data-bs-target="#slide-demo"
+                  data-bs-slide="prev">
+                
+                  <span class="carousel-control-prev-icon" style="background-color: rgb(154, 151, 151); border-radius:50%;"></span>
+              </button>
+
+              <button class="carousel-control-next" type="button"
+                  data-bs-target="#slide-demo"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" style="background-color: black; border-radius:50%;"></span>
+              </button>
+                            
           </div>          
 
       </div>                

@@ -37,3 +37,13 @@ class Service(models.Model):
     
     class Meta:
         verbose_name_plural = 'Service'
+
+class HeroSection(models.Model):        
+    image = models.ImageField(upload_to='hero_images')
+    description = models.TextField()
+
+    def __str__(self):
+        return 'image'
+    
+    class Meta:
+        verbose_name_plural = 'Hero Section'

@@ -1,15 +1,21 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i&c(w3(rhs5-i^%n))%i*i%0u@as-f6(b1w32an=kfhthdfe1h'
+# SECRET_KEY = 'django-insecure-i&c(w3(rhs5-i^%n))%i*i%0u@as-f6(b1w32an=kfhthdfe1h'
+
+with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+# 'mkinteriordecor.com', 'www.mkinteriordecor.com'
 
 
 # Application definition
@@ -26,6 +32,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'Start.apps.StartConfig',
 ]
+
 
 
 MIDDLEWARE = [
@@ -110,14 +117,29 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-import os
 # Base url to serve media files  
 MEDIA_URL = 'media/'  
   
 # Path where media is stored  
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 
+
+# HTTPS Settings
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+
+# HSTS Settings
+# SECURE_HSTS_SECONDS = 31536000 # 1 year
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGOUT_REDIRECT_URL = '/login/'
+
