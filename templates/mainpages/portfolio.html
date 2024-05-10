@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Portfolio | Page {% endblock %}
+
+{% block content %}
+
+  <!-- Portfolio / works Start -->
+    <div class="container-fluid event py-6" id="portfolio" style="font-family: 'Young Serif', serif;">
+        <div class="container">
+            <div class="text-center" > 
+            <h4 style="color: rgb(38, 48, 44);">Our Social <span style="color:  rgba(244, 147, 12, 0.7); font-weight:bold; font-size:30px;">&</span> Professional Work Gallery</h4>            
+            <hr>
+
+                <!-- <h1 class="display-5 mb-5">Our Social & Professional Work Gallery</h1> -->
+
+            </div>
+            <div class="tab-class text-center">
+
+                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp">
+                    <li class="nav-item p-2">
+                        <a class="d-flex btn mx-2 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
+                            <span class="text-dark px-2">Images</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item p-2">
+                        <a class="d-flex btn mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
+                            <span class="text-dark px-2">Videos</span>
+                        </a>
+                    </li>                
+                </ul>
+
+                <div class="tab-content">              
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4 align-items-center" style="background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">
+                            <div class="col-lg-12">
+                                <div class="row g-4 align-items-center justify-content-center">
+
+                                {% for work in work %}
+
+                                    <div class="col-sm-6 col-md-4 col-lg-3 m-3 p-3 rounded-5 work-container shadow-3">
+                                        <div class="event-img position-relative">
+                                            <img class="img-fluid rounded w-100 work-image" src="{{work.image.url}}" alt="Image not available" >
+                                            <div class="event-overlay d-flex flex-column p-4">
+                                                <h4 class="text-center">{{work.name}}</h4>
+                                                <!-- <a target="_blank" href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a> -->
+                                            </div>
+                                        </div>
+                                    </div>   
+                                    
+                                    {% endfor %}                            
+                                                                                                                                                                                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>              
+
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4" style="background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;" >
+                            <div class="col-lg-12">
+                                <div class="row g-4 align-items-center justify-content-center">
+
+                                {% for video_work in video_work %}
+
+                                <!-- style="background-color: rgba(44, 78, 59, 0.5);" -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3 border m-3 p-3 rounded-5 video-work-container shadow-3">
+                                        <div class="event-img position-relative">
+                                            <video src="{{video_work.video.url}}" class="work-video" controls ></video>
+                                            <div class="event-overlay d-flex flex-column p-4"> 
+                                                <h4 class="text-center">{{video_work.name}}</h4>
+                                                <!-- <a target="_blank"  href="#" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% endfor %}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- end portfolio / works -->
+
+ 
+{% endblock %}
+
+
+
+  

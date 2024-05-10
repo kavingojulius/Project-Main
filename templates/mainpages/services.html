@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Services | Page {% endblock %}
+
+{% block content %}
+
+  <!-- services -->
+  <section class="serv" id="services" style="background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;" data-aos="fade-left" data-aos-duration="2000">    
+    <div class="row d-flex services shadow-3 align-items-center">
+      <div class="col-xl-12 col-lg-12">
+          <div class="section-header text-center">
+            <h4 style="color: rgb(38, 48, 44);">* Our <span style="color:  rgba(244, 147, 12, 0.7); font-weight:bold; font-size:30px;">Service</span> Expertise *</h4>              
+            <h5 style="color: rgb(6, 147, 91); font-style:oblique; font-weight:bold;">What we offer</h5>          
+            <hr>
+          </div>
+          
+          <div class="d-flex gap-5 flex-wrap justify-content-center align-items-center">
+
+            {% for service in service %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card c-body">
+                <img src="{{service.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title text-center" style="color:#1c5e9c;">{{service.name}}</h4>
+                  <p class="card-text" style="font-style:oblique;">{{service.description}}</p>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+                                            
+          </div>
+
+          
+      </div>
+    </div>
+  </section>
+  <!-- services end -->
+
+ 
+{% endblock %}
+
+
+
+  
