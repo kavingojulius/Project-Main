@@ -7,7 +7,7 @@
 {% block content %}
 
   <!-- services -->
-  <section class="serv" id="services" style="background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">    
+  <section class="serv animate-section" id="services" style="background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">    
     <div class="row d-flex services shadow-3 align-items-center my-3">
       <div class="col-xl-12 col-lg-12">
           <div class="section-header text-center">
@@ -22,10 +22,10 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6">
               <div class="card c-body">
-                <img src="{{service.image.url}}" class="card-img-top" alt="...">
+                <img src="{{service.image.url}}" class="card-img-top abbt" alt="...">
                 <div class="card-body">
-                  <h4 class="card-title text-center" style="color:#1c5e9c;">{{service.name}}</h4>
-                  <p class="card-text" style="font-style:oblique;">{{service.description}}</p>
+                  <h4 class="card-title text-center" style="color:#1c5e9c;text-transform: capitalize;">{{service.name}}</h4>
+                  <p class="card-text" style="font-weight:normal;">{{service.description}}</p>
                 </div>
               </div>
             </div>
@@ -79,7 +79,7 @@
   <!-- services end -->
 
   <!-- Portfolio / works Start -->
-  <div class="container-fluid event py-6 my-5" id="portfolio" style="font-family: 'Young Serif', serif; background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">
+  <div class="container-fluid event py-6 my-5 animate-section" id="portfolio" style="font-family: 'Young Serif', serif; background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">
     <div class="container">
         <div class="text-center" > 
           <h4 style="color: rgb(38, 48, 44);">Our <span style="color:  rgba(14, 132, 32, 0.7); font-weight:bold;">Social</span> <span style="color:  rgba(244, 147, 12, 0.7); font-weight:bold; font-size:30px;">&</span> <span style="color:  rgba(14, 132, 32, 0.7); font-weight:bold;">Professional</span> Work Gallery</h4>            
@@ -198,7 +198,7 @@
   <!-- end portfolio / works -->
 
   <!-- Social Media Start -->
-  <div class="container-fluid event py-6 mt-5 mb-0" id="socialmedia" style="font-family: 'Young Serif', serif; background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">
+  <div class="container-fluid event py-6 mt-5 mb-0 animate-section" id="socialmedia" style="font-family: 'Young Serif', serif; background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">
     <div class="container">
         <div class="text-center">            
             <h4 class="mb-0">Our <span style="color:  rgba(244, 147, 12, 0.7); font-weight:bold;">Social </span> <span style="color:  rgba(47, 152, 108, 0.7); font-weight:bold;">Media</span> Content</h4>
@@ -275,7 +275,47 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
+
+<!-- Contact us -->
+<section class="serv animate-section" id="contact-us" style="background-image: url(media/images/bbg.png); background-position:center;  background-repeat: repeat;">    
+  <div class="row d-flex contact-us shadow-3 align-items-center my-3">
+    <div class="col-xl-12 col-lg-12">
+        <div class="section-header text-center">
+          <h4 style="color: rgb(38, 48, 44);">* Email <span style="color:  rgba(244, 147, 12, 0.7); font-weight:bold; font-size:30px;">Us</span> *</h4>                        
+          <hr>
+        </div>
+        
+        <div class="d-flex gap-5 flex-wrap justify-content-center align-items-center" id="email-form">          
+          <form action="https://api.web3forms.com/submit" method="POST" class="col-lg-8 col-md-8 col-sm-8">            
+            <input type="hidden" name="access_key" value="3468a59b-f62f-429d-ab12-60440f937fc5">
+            <div class="names">
+              <label for="InputNames" class="form-label">User Name</label>
+              <input type="text" name="name" class="form-control" id="inputName"  placeholder="Enter you full names">
+              <small id="inputname" class="form-text text-muted">You can fill in your full names here.</small>
+            </div>
+            <div class="email mt-4">
+              <label for="InputEmail1" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="message mt-4">
+              <label for="subject" class="form-label">Subject - Message </label>
+              <textarea name="message" class="form-control" id=""></textarea>
+            </div>
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <!-- Custom Confirmation / Success Page -->
+            <!-- <input type="hidden" name="redirect" value="https://mkinteriordecor.com/thanks.html"> -->
+            <button type="submit" class="btn btn-success mt-4">Submit</button>
+          </form>                                                    
+        </div>                      
+    </div>
+  </div>
+</section>
+<!-- Contact us end -->
+
 
 
 {% endblock %}
